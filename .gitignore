@@ -1,6 +1,15 @@
 # pylucence
 pylucene-9.7.0
 
+# index
+Chess.index/
+IndexFiles.index/
+zoutput/
+test/
+lichess_db_standard_rated_2023-09.pgn
+lichess_db_standard_rated_2023-09.pgn.zst
+
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
