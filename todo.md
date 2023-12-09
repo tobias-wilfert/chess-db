@@ -1,0 +1,4 @@
+- [ ] Look into [Synonym Expansion](http://en.wikipedia.org/wiki/Synonym)
+- [ ] Write a section on the indexer we used and why as well as why some of the processes saw in the beginning are not really interesting
+- [ ] Play with the fuzzy matcher and see if that outputs anything of interest
+- [ ] Clean up the report and talk about our thought process 

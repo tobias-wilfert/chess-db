@@ -2,13 +2,26 @@
 pylucene-9.7.0
 
 # index
-Chess.index/
-IndexFiles.index/
 zoutput/
 test/
 lichess_db_standard_rated_2023-09.pgn
 lichess_db_standard_rated_2023-09.pgn.zst
+good_games/
+good_games_v1/
+Lichess Elite Database/
+filter_more/
 
+# Ignore all the index directories
+**/*.index
+
+# Ignore all the DS_Store files
+**/.DS_Store
+
+# Ignore all the .pgn files
+**/*.pgn
+
+# Ignore all the .zip files
+**/*.zip
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
