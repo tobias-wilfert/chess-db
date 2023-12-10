@@ -11,6 +11,8 @@ good_games_v1/
 Lichess Elite Database/
 filter_more/
 
+new_notation/
+
 # Ignore all the index directories
 **/*.index
 
