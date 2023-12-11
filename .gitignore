@@ -1,5 +1,10 @@
 # pylucence
 pylucene-9.7.0
+pylucene-9.4.1
+
+# chessdb
+chessdb
+
 
 # Byte-compiled / optimized / DLL files
 __pycache__/

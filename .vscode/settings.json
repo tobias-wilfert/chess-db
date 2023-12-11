@@ -1,0 +1,7 @@
+{
+    "workbench.colorCustomizations": {
+        // change python variable color to green
+        "variables": "#00FF00"
+        
+    }
+}
