@@ -1,5 +1,0 @@
-Interesting and original project proposal.
-The main challenge will likely be finding a good distance measure and how to adapt the indexing 
-structure for the distance measure. Evaluating through chess puzzles is an interesting idea. 
-One caveat: make sure the IR content of the project is sufficientyl covered;
-try for instance different document similarity measures.

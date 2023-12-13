@@ -1,4 +1,5 @@
 - [ ] Look into [Synonym Expansion](http://en.wikipedia.org/wiki/Synonym)
 - [ ] Write a section on the indexer we used and why as well as why some of the processes saw in the beginning are not really interesting
-- [ ] Play with the fuzzy matcher and see if that outputs anything of interest
-- [ ] Clean up the report and talk about our thought process 
+- [x] Play with the fuzzy matcher and see if that outputs anything of interest
+- [x] Clean up the report and talk about our thought process 
+- [ ] Maybe have a look at [Zobrist hashing](https://en.wikipedia.org/wiki/Zobrist_hashing) and see if that is something we can use

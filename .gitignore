@@ -13,6 +13,11 @@ filter_more/
 
 new_notation/
 
+Indexes/
+Papers/
+PGN/
+DBS/
+
 # Ignore all the index directories
 **/*.index
 
