@@ -17,6 +17,10 @@ Indexes/
 Papers/
 PGN/
 DBS/
+**/*.csv
+bf_games/
+games/
+games2/
 
 # Ignore all the index directories
 **/*.index
