@@ -1,0 +1,70 @@
+<!-- A very hacky prove of concept. -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Chess Database</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet"
+      href="https://unpkg.com/@chrisoakman/chessboardjs@1.0.0/dist/chessboard-1.0.0.min.css"
+      integrity="sha384-q94+BZtLrkL1/ohfjR8c6L+A6qzNH9R2hBLwyoAfu3i/WCvQjzL2RQJ3uNHDISdU"
+      crossorigin="anonymous">
+</head>
+<body class="bg-gray-100">
+    <div class="text-center flex flex-col items-center"></div>
+        <h1 class="text-4xl text-center font-bold mt-8 mb-2">Chess DB</h1>
+        <h2 class="text-2xl text-center mb-4">Enter a position or paste the FEN.</h2>
+        <div id="board" class="mx-auto" style="width: 400px"></div>
+
+        <div class="flex justify-center mt-2">
+            <button id="startBtn" class="bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded">
+                Start Position
+            </button>
+            <button id="clearBtn" class="bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded ml-4">
+                Clear Board
+            </button>
+        </div>
+
+        <form method="POST" action="/" class="max-w-md mx-auto mt-2" target="_blank">
+            <input type="text" id="entry" name="entry" placeholder="Enter FEN" class="w-full px-4 py-2 border border-gray-300 rounded-md mb-2">
+
+            <input type="submit" value="Search Similar Positions" class="w-full px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600">
+        </form>
+</body>
+</html>
+
+<!-- Hackery to make it all work -->
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"
+        integrity="sha384-ZvpUoO/+PpLXR1lu4jmpXWu80pZlYUAfxl5NsBMWOEPSjUn/6Z/hRTt8+pR6L4N2"
+        crossorigin="anonymous"></script>
+
+<script src="https://unpkg.com/@chrisoakman/chessboardjs@1.0.0/dist/chessboard-1.0.0.min.js"
+        integrity="sha384-8Vi8VHwn3vjQ9eUHUxex3JSN/NFqUg3QbPyX8kWyb93+8AC/pPWTzj+nHtbC5bxD"
+        crossorigin="anonymous"></script>
+
+<script>
+    var board = Chessboard('board', {
+    draggable: true,
+    dropOffBoard: 'trash',
+    sparePieces: true,
+    onChange: updateFen
+    })
+
+    function updateFen(_, newPos) {
+        $('#entry').val(Chessboard.objToFen(newPos))
+    }
+    $('#entry').on('input', function() {
+        board.position($(this).val())
+    })
+
+    $('#startBtn').on('click', board.start)
+    $('#clearBtn').on('click', board.clear)
+</script>
+
+<style>
+    img {
+       display: inline;
+    }
+</style>
