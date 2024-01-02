@@ -104,7 +104,9 @@ def score_lookup(board, bound):
     searcher = IndexSearcher(DirectoryReader.open(directory))
     searcher.setSimilarity(BM25Similarity())
     analyzer = WhitespaceAnalyzer()
-    output = run_query(searcher, analyzer, command=encode_board_position(board), bound=bound)
+    board_position = encode_board_position(board)
+    print("Searching for:", board_position)
+    output = run_query(searcher, analyzer, command=board_position, bound=bound)
     del searcher  
     return output
 
@@ -131,8 +133,9 @@ def results():
     vm_env = lucene.getVMEnv()
     vm_env.attachCurrentThread()
     query = chess.Board(entries[-1])
-    res = score_lookup(query, 25)[:5]
-    filter = [[chess.svg.board(decode_piece_position(x[4])), round(x[3],5), "1-0" if ("1-0" in x[5]) else "1/2-1/2" if ("1/2-1/2" in x[5]) else "0-1", x[2] ] for x in res]
+    res = score_lookup(query, 50)
+    print(f"Found {len(res)} unique games in the first 50 results.")
+    filter = [[chess.svg.board(decode_piece_position(x[4])), round(x[3],5), "1-0" if ("1-0" in x[5]) else "1/2-1/2" if ("1/2-1/2" in x[5]) else "0-1", x[2] ] for x in res[:10]]
     # print(res)
     # print(filter)
     
@@ -146,6 +149,7 @@ if __name__ == '__main__':
         lucene.initVM(vmargs=['-Djava.awt.headless=true'])  # This needs to be run once to get it all going
     except ValueError as e:
         print("VM already initialized")
-        
+    
     app.run()
 
+# Interesting game: 8/p1pk4/1p2pp2/8/3P1P2/2P1KR1r/PP6/8

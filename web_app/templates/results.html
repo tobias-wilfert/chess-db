@@ -11,20 +11,20 @@
 <body class="bg-gray-100">
     <div class="flex justify-center items-center">
         <div class="flex-col">
-            <h2 class="text-2xl font-bold text-center">Query:</h2>
+            <h2 class="text-2xl font-bold text-center mt-2">Query:</h2>
             <svg height="250" width="250" class=""> {{ query | safe }} </svg>
         </div>
     </div>
     <div class="flex justify-center items-center">
         <div class="flex-col">
             <h2 class="text-2xl font-bold mt-2 text-center">Results:</h2>
-            <div class="flex">
+            <div class="flex flex-wrap justify-center">
                 {% for result in results %}
-                <div>
-                    <svg height="250" width="250" class="m-2"> {{ result[0] | safe }} </svg>
+                <div class="m-2">
+                    <a class="text-blue-500 underline hover:text-blue-800" href="{{ result[3] }}"><svg height="250" width="250"> {{ result[0] | safe }} </svg> </a>
                     <h5 class=""><b>Similarity:</b> {{ result[1] }} </h4>
                     <h5 class=""><b>Outcome:</b> {{ result[2] }} </h4>
-                    <a class="text-blue-500 underline hover:text-blue-800" href="{{ result[3] }}">Show Game</a>
+                    <!-- <a class="text-blue-500 underline hover:text-blue-800" href="{{ result[3] }}">Show Game</a> -->
                 </div>
                 {% endfor %}
             </div>
