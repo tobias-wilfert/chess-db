@@ -1,3 +1,11 @@
+# Chess-DB - An Information Retrieval System for Chess Positions
+
+## Introduction
+This repository contains the code for the project for the course Information Retrieval. For more information about the project see the [project proposal](./project_proposal.pdf)
+
+## Overview
+
+
 # Report: Chess-DB - A Python-based chess explorer
 
 ## Overiew
